@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 require_once 'frontend/content.php';
+require_once 'frontend/pendaftaran.php';

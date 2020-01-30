@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use App\Content;
+
 class ContentController extends Controller
 {
     /**
@@ -14,7 +16,9 @@ class ContentController extends Controller
      */
     public function index()
     {
-        return view('Frontend.index');
+        $data = Content::whereNotNull('content')->get();
+
+        return view('Frontend.index',compact('data'));
     }
 
     /**
